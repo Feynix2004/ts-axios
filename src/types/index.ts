@@ -28,6 +28,7 @@ export interface AxiosRequestConfig {
   params?: any
   headers?: any
   responseType?: XMLHttpRequestResponseType
+  timeout?: number
   //`responseType` 的类型是一个 `XMLHttpRequestResponseType` 类型，
   // 它的定义是 `"" | "arraybuffer" | "blob" | "document" | "json" | "text"` 字符串字面量类型。
 }
