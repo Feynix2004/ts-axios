@@ -20,7 +20,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       reject(createError('Network Error', config, null, request))
     }
 
-    request.open(method.toUpperCase(), url, true)
+    request.open(method.toUpperCase(), url!, true)
 
     request.onreadystatechange = function handleLoad() {
       if (request.readyState !== 4) {
