@@ -2,17 +2,13 @@ import {
   AxiosPromise,
   AxiosRequestConfig,
   AxiosResponse,
+  Interceptors,
   Method,
   RejectFn,
   ResolvedFn
 } from '../types'
 import dispatchRequest from './dispatchRequest'
 import InterceptorManager from './InterceptorManager'
-
-interface Interceptors {
-  request: InterceptorManager<AxiosRequestConfig>
-  response: InterceptorManager<AxiosResponse>
-}
 
 interface PromiseChain {
   resolved: ResolvedFn | ((config: AxiosRequestConfig) => AxiosPromise)
