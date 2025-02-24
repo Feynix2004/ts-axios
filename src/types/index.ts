@@ -54,6 +54,7 @@ export interface Interceptors {
 }
 
 export interface Axios {
+  defaults: AxiosRequestConfig
   interceptors: Interceptors
   request(config: AxiosRequestConfig): AxiosPromise
   get(url: string, config?: AxiosRequestConfig): AxiosPromise
@@ -68,6 +69,10 @@ export interface Axios {
 export interface AxiosInstance extends Axios {
   (config: AxiosRequestConfig): AxiosPromise
   (url: string, config?: AxiosRequestConfig): AxiosPromise
+}
+
+export interface AxiosStatic extends AxiosInstance {
+  create(config?: AxiosRequestConfig): AxiosInstance
 }
 
 export interface AxiosInterceptorManager {
