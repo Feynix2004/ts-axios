@@ -3,14 +3,14 @@ import { AxiosRequestConfig, AxiosResponse } from '../types'
 export class AxiosError extends Error {
   isAxiosError: boolean
   config: AxiosRequestConfig
-  code?: string | null
+  code?: string | null | number
   request?: any
   response?: AxiosResponse
 
   constructor(
     message: string,
     config: AxiosRequestConfig,
-    code?: string | null,
+    code: string | null | number,
     request?: any,
     response?: AxiosResponse
   ) {
@@ -28,10 +28,10 @@ export class AxiosError extends Error {
 export function createError(
   message: string,
   config: AxiosRequestConfig,
-  code?: string | null,
+  code: string | null | number,
   request?: any,
   response?: AxiosResponse
-): AxiosError {
+) {
   const error = new AxiosError(message, config, code, request, response)
   return error
 }
