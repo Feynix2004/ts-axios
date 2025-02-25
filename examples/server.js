@@ -8,6 +8,9 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const WebpackConfig = require('./webpack.config')
 const path = require('path')
+
+require('./server2')
+
 const app = express()
 const complier = webpack(WebpackConfig)
 
