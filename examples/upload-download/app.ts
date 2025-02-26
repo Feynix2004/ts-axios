@@ -43,18 +43,18 @@ function loadProgressBar() {
 
 const downloadEl = document.getElementById('download')
 
-const downloadFileURL = 'https://img.mukewang.com/5cc01a7b0001a33718720632.gif'
+const downloadFileURL = 'https://p5.img.cctvpic.com/photoworkspace/contentimg/2023/03/30/2023033011303020756.jpg'
 
-downloadEl.addEventListener('click', e => {
+downloadEl!.addEventListener('click', e => {
   instance.get(downloadFileURL)
     .then(res => {
       console.log(`download file success, data.length: ${res.data.length}, data.url: ${res.config.url}`)
-    })
+    }).catch(err => console.log(err))
 })
 
 const uploadEl = document.getElementById('upload')
 
-uploadEl.addEventListener('click', e => {
+uploadEl!.addEventListener('click', e => {
   const data = new FormData()
   const fileEl = document.getElementById('file') as HTMLInputElement
   if (fileEl.files) {
